@@ -1,0 +1,301 @@
+body {
+    /* font-family: 'Comfortaa', cursive; */
+    margin: 0;
+    padding: 0;
+}
+
+#bg {
+    color: #4e73df;
+    font-weight: bold;
+}
+
+
+/* edit button*/
+
+.far-fa-edit {
+    padding: 9px 30px 9px 30px;
+    border-radius: 100px;
+    outline: none;
+    background: #14D9B1;
+    border: 1px solid #14D9B1;
+    color: rgb(255, 255, 255);
+    transition: 0.2s linear;
+}
+
+.far-fa-edit:hover {
+    background: #ffffff;
+    color: #14D9B1;
+}
+
+.far-fa-edit:active {
+    background: #30FFD6;
+}
+
+
+/* delete button*/
+
+.deleteb {
+    padding: 9px 30px 9px 30px;
+    border-radius: 100px;
+    color: #fff;
+    background: #FF5517;
+    border: 1px solid #FF5517;
+    transition: 0.2s linear;
+    outline: none;
+}
+
+.deleteb:hover {
+    background: #ffffff;
+    color: #FF5517;
+}
+
+.deleteb:active {
+    background: #BF3402;
+}
+
+.new-btn {
+    background: #1B91E3;
+    border-radius: 100px;
+    border: 1px solid #506AD4;
+    transition: 0.2s linear;
+    outline: none;
+    margin: auto;
+    text-align: center;
+    width: 200px;
+}
+
+.new-btn:hover {
+    background: white;
+    color: #1B91E3;
+}
+
+.new-btn:visted {
+    background: pink;
+}
+
+.new-btn:active {
+    background: #0f2991;
+}
+
+
+/* table headers*/
+
+th {
+    color: #0D0D0D;
+    font-weight: bold;
+}
+
+tr th {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+tr td:hover {
+    color: #0f35cc;
+}
+
+tr:hover {
+    background-color: #E6F3FF;
+}
+
+.myTable,
+.table th {
+    text-align: center;
+}
+
+
+/* yes delete button*/
+
+.yesbutton {
+    background: lightgreen;
+    border: 1px solid darkgreen;
+    border-radius: 100px;
+    transition: 0.4s linear;
+}
+
+.yesbutton:hover {
+    background: darkgreen;
+}
+
+
+/* no delete cancel button*/
+
+.cancelbutton {
+    background: #4e73df;
+    border: 1PX solid red;
+    border-radius: 100px;
+    transition: 0.4s linear;
+}
+
+.cancelbutton:hover {
+    background: red;
+}
+
+
+/* h3 span {
+    color: #fa3380;
+} */
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.myTable {
+    margin-top: 50px;
+}
+
+.myAlert {
+    margin: 50px 0 0
+}
+
+.alert h4 {
+    margin: 0
+}
+
+
+/* span {
+    color: red
+} */
+
+.footer {
+    padding-top: 235px
+}
+
+
+/* Add data button*/
+
+
+/* save close buttons*/
+
+.saveb {
+    background: #4e73df;
+    border: 1px solid #4e73df;
+    border-radius: 100px;
+    transition: 0.4s linear;
+}
+
+.saveb:hover {
+    background: #4e73df;
+}
+
+.closeb {
+    border-radius: 100px;
+    border: 1px solid #4e73df;
+    transition: 0.4s linear;
+}
+
+.closeb:hover {
+    background-color: #fff;
+    border: 1px solid #4e73df;
+    color: #4e73df;
+}
+
+
+/* Email Input*/
+
+
+/* input[type=email] {
+    border-radius: 100px;
+    width: 100%;
+    transition: 0.4s linear;
+    border: 1px solid #4e73df;
+    background: #fafafa;
+}
+
+input[type=email]:hover {
+    border-radius: 100px;
+    border: 1px solid violet;
+    background: pink;
+}
+
+input[type=email]:focus {
+    border-radius: 50px;
+    border: 2px solid lightgreen;
+    width: 270px;
+    color: white;
+    background: rgb(243, 243, 243); */
+
+
+/* } */
+
+
+/* nickname and Fullname Input*/
+
+
+/* input[type=text] {
+    border-radius: 100px;
+    width: 100%;
+    transition: 0.4s linear;
+    border: 1px solid #4e73df;
+    background: #fafafa;
+}
+
+input[type=text]:hover {
+    border-radius: 100px;
+    border: 1px solid violet;
+    background: pink;
+}
+
+input[type=text]:focus {
+    border-radius: 50px;
+    border: 2px solid lightgreen;
+    width: 250px;
+    color: white;
+    background: #224;
+}
+
+.popup-w {
+    background: transparent;
+}
+
+footer {
+    margin-top: -200px;
+    padding: 20px;
+    background: #4e73df;
+    color: #fff;
+    width: 100%;
+    border-radius: 400px;
+} */
+
+
+/* edit buttons */
+
+#save-edit-btn {
+    border-radius: 100px;
+    outline: none;
+}
+
+#save-close-btn {
+    border-radius: 100px;
+    background: #4e73df;
+    color: #fff;
+    outline: none;
+}
+
+
+/*  FOLLOW*/
+
+
+/* .Follow {
+    background: url("https://pbs.twimg.com/profile_images/959092900708544512/v4Db9QRv_bigger.jpg")no-repeat center / contain;
+    width: 50px;
+    height: 50px;
+    bottom: 9px;
+    right: 20px;
+    display: block;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 999;
+    animation: rotation 10s infinite linear;
+} */
+
+
+/* @-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+} */

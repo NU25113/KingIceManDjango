@@ -1,0 +1,64 @@
+{% extends "Accou/index.html" %} {% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-5">
+    <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูล งบประมาณ</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i>Download</a>
+</div>
+<!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">งบประมาณ</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class=" table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>รหัสงบประมาณ</th>
+                        <th>รายการงบประมาณ</th>
+                        <th>ลงชื่อผู้เบิก</th>
+                        <th>วันที่</th>
+                        <th colspan="2">
+                            <div class=" align-items-center flex-row-reverse bd-highlight ">
+                                <a class="p-2 bd-highlight btn btn-info pull-right new-btn " href="{% url 'appAccounting:create_budget' %} " ata-toggle="modal " data-target="#addModal ">&#10011 Add Data</a>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>รหัสงบประมาณ</th>
+                        <th>รายการงบประมาณ</th>
+                        <th>ลงชื่อผู้เบิก</th>
+                        <th>วันที่</th>
+                        <th colspan="2 ">
+                            <div class=" align-items-center flex-row-reverse bd-highlight ">
+                                <a class="p-2 bd-highlight btn btn-info pull-right new-btn " href="{% url 'appAccounting:create_budget' %} " ata-toggle="modal " data-target="#addModal ">&#10011 Add Data</a>
+                            </div>
+                        </th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    {% for Bif in Budget_information %}
+                    <tr>
+                        <td> {{ Bif.ID_budget }} </td>
+                        <td> {{ Bif.Name_budget }} </td>
+                        <td> {{ Bif.Sign_in }} </td>
+                        <td> {{ Bif.Date }} </td>
+                        <td>
+                            <!-- <i class="far fa-edit "></i> -->
+                            <a href="{% url 'appAccounting:update_budget' Bif.ID_budget %}" class="far-fa-edit " data-toggle="modal " data-target="#editModal " ng-click="selectUser(user) "><i class="far fa-edit "></i></a>
+                        </td>
+                        <td>
+                            <a href="{% url 'appAccounting:delete_budget' Bif.ID_budget %}" class="deleteb " data-toggle="modal " data-target="#deleteModal " ng-click="selectUser(user) "><i class="far fa-trash-alt "></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "Accou/index.html" %} {% block content %}
+<div align="center" class="row " action="{% url 'appAccounting:delete_budget' items.ID_budget %}" method="POST">
+    <div class="col-md-7 mb-5">
+        <form align="center" method="POST" class=" p-5 bg-white">
+            {% csrf_token %}
+            <!-- <input type="submit" name="submit" value=" Add " class="btn btn-primary btn-md text-white "> -->
+            <h2 class="h5 text-primary mb-2">แน่ในหรือว่าคุณต้องการลบ "{{items}}?"</h2><br>
+            <a href="{% url 'appAccounting:index' %}" class="col-md-12">
+                <input type="submit" name="Confirm" value=" Delete" class="btn btn-danger btn-md text-white ">
+            </a>
+            <a class="btn btn-secondary btn-md text-white " href="{% url 'appAccounting:index' %}">Cancel</a>
+
+
+
+        </form>
+    </div>
+    <!-- <div class="col-md-5 ">
+
+
+    </div> -->
+</div>
+<!-- <form align="center" action="{% url 'appAccounting:delete_budget' items.ID_budget %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'appAccounting:index' %}" class="col-md-12">
+        <input type="submit" name="Confirm" value=" Delete" class="btn btn-danger btn-md text-white ">
+    </a>
+    <a class="btn btn-secondary btn-md text-white " href="{% url 'appAccounting:index' %}">Cancel</a>
+
+</form>-->
+{% endblock %}

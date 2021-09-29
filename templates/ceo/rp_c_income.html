@@ -1,0 +1,59 @@
+{% extends "ceo/index.html" %} {% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-5">
+    <h1 class="h3 mb-0 text-gray-800">รายงาน ข้อมูลรายได้</h1>
+    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i>Download</a> -->
+</div>
+<!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
+<button id="print" onClick="window.print();" class="btn btn-primary btn-pdf">PDF</button>
+<a href="{% url 'appCeo:export_excel_IC' %}" class="btn btn-primary btn-excel ">Excel</a>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ข้อมูลรายได้</h6>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <!-- <th>รหัสถัง</th> -->
+                    <th>รายการเช่าที่</th>
+                    <th>ชื่อรายการ</th>
+                    <th>จำนวน</th>
+                    <!-- <th>รวม</th> -->
+                    <th>วันที่</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>รายการเช่าที่</th>
+                    <th>ชื่อรายการ</th>
+                    <th>จำนวน</th>
+                    <!-- <th>รวม</th> -->
+                    <th>วันที่</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                {% for ic in income %}
+                <tr>
+                    <!-- <td>{{ ic.bucket_main }}</td> -->
+                    <td>{{ ic.Agency_rent }}</td>
+                    <td>{{ ic.Name_List }}</td>
+                    <td>{{ ic.total_price }}</td>
+                    <!-- <td>{{ ic.total_sale}}</td> -->
+                    <td>{{ ic.Date }}</td>
+                </tr>
+                {% endfor %}
+                <!-- {% for AA in income %} -->
+                <!-- <tr>
+                    <td colspan="2 ">ยอดรวม</td>
+                    <td>{{ AA.total_sale}}</td>
+                    <td>{{ AA.get_price }}</td> -->
+                <!-- </tr>{% endfor %} -->
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

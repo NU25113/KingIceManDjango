@@ -1,0 +1,65 @@
+{% extends "ceo/index.html" %} {% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-5">
+    <h1 class="h3 mb-0 text-gray-800">รายงานข้อมูล เอเจนซี่</h1>
+    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i>Download</a> -->
+</div>
+<!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
+<button id="print" onClick="window.print();" class="btn btn-primary btn-pdf">PDF</button>
+<a href="{% url 'appCeo:export_excel_A' %}" class="btn btn-primary btn-excel ">Excel</a>
+<br> &nbsp;
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">เอเจนซี่</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div class="table-responsive">
+                <!-- <a href="#!" class="btn btn-primary btn-copy">Copy</a>
+                <a href="#!" class="btn btn-primary btn-csv">CSV</a>
+                <a href="#!" class="btn btn-primary btn-excel">Excel</a>
+                <a href="#!" class="btn btn-primary btn-pdf">PDF</a>
+                <a href="#!" class="btn btn-primary btn-print">Print</a> -->
+
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>รหัสเอเจนซี่</th>
+                            <th>ชื่อ</th>
+                            <th>สกุล</th>
+                            <th>ที่อยู่</th>
+                            <th>เบอร์</th>
+                            <th>รูป</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>รหัสเอเจนซี่</th>
+                            <th>ชื่อ</th>
+                            <th>สกุล</th>
+                            <th>ที่อยู่</th>
+                            <th>เบอร์</th>
+                            <th>รูป</th>
+
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for AJ in Agen %}
+                        <tr>
+                            <td>{{ AJ.ID_Aj }}</td>
+                            <td>{{ AJ.F_Agency }}</td>
+                            <td>{{ AJ.L_Agency }}</td>
+                            <td>{{ AJ.Address }}</td>
+                            <td>{{ AJ.Tel }}</td>
+                            <td>
+                                <img class="thumbnail" src="{{ AJ.image.url }}">
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,26 @@
+{% extends "main/form_login.html" %} {% block content %}
+<!--? Register Form -->
+<div class="text-center">
+    <h1 class="h4 text-gray-900 mb-4">Welcome King Ice Man!</h1>
+</div>
+<form method="POST">
+    {% csrf_token %} {{ form.username.label }} &nbsp;{{ form.username }}<br>
+    <br>{{ form.email.label }} &nbsp;{{ form.email }}<br>
+    <br>{{ form.password1.label }}&nbsp;{{ form.password1}}<br>
+    <br>{{ form.password2.label }}&nbsp; {{ form.password2}}<br> <button type="submit " class="btn btn-sm btn-success "><i class="fa fa-plus "></i> Register Account</button>
+
+    <div class="form-group ">
+        <div class="col-xs-12 text-center ">
+            <a href="{% url 'appMain:form_login' %}"><small>back</small></a>
+        </div>
+    </div>
+    <div class="form-group ">
+        {% for message in messages %}
+        <p style="color: lightskyblue; ">{{message}}</p> {% endfor%}
+    </div>
+</form>
+<!--? END Register Form -->
+<!--? สิ้นรอมเพิ่มสมาชิก -->
+
+
+</div>{% endblock %}

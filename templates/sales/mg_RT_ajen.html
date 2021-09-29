@@ -1,0 +1,97 @@
+{% extends "sales/index.html" %} {% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-5">
+    <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูล เช่าของเอเจนซี่</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i>Download</a>
+</div>
+<!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ข้อมูลการเช่าของเอเจนซี่</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <!-- <a class="btn btn-success" style="float:left;margin-right:20px;" href="https://codepen.io/collection/XKgNLN/" target="_blank">Other examples on Codepen</a> -->
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+
+                        <tr>
+                            <th>รหัสรายการ</th>
+                            <th>ชื่อรายการ</th>
+                            <th>รหัสถังน้ำแข็ง</th>
+                            <th>ชื่อ</th>
+                            <th>สกุล</th>
+                            <th>ที่อยู่</th>
+                            <th>เบอร์</th>
+                            <th>ระยะเวลาที่เช่า</th>
+                            <th>จำนวน</th>
+                            <th>ขนาด S</th>
+                            <th>ขนาด M</th>
+                            <th>ขนาด L</th>
+                            <th>วันที่</th>
+                            <th colspan="2">
+                                <div class=" align-items-center flex-row-reverse bd-highlight">
+                                    <button class=" mb-auto p-2 bd-highlight btn btn-info pull-right new-btn" data-toggle="modal" data-target="#addModal">&#10011 Add Data</button>
+                                </div>
+                            </th>
+
+
+                        </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>รหัสรายการ</th>
+                        <th>ชื่อรายการ</th>
+                        <th>รหัสถังน้ำแข็ง</th>
+                        <th>ชื่อ</th>
+                        <th>สกุล</th>
+                        <th>ที่อยู่</th>
+                        <th>เบอร์</th>
+                        <th>ระยะเวลาที่เช่า</th>
+                        <th>จำนวน</th>
+                        <th>ขนาด S</th>
+                        <th>ขนาด M</th>
+                        <th>ขนาด L</th>
+                        <th>วันที่</th>
+                        <th colspan="2">
+                            <div class="align-items-center flex-row-reverse bd-highlight">
+                                <button class=" mb-auto p-2 bd-highlight btn btn-info pull-right new-btn" data-toggle="modal" data-target="#addModal">&#10011 Add Data</button>
+                            </div>
+                        </th>
+
+                    </tr>
+                </tfoot>
+                <tbody>
+                    {% for Art in Agency %}
+                    <tr>
+                        <td> {{ Art.ID_List }} </td>
+                        <td> {{ Art.Name_List }} </td>
+                        <td> {{ Art.ID_bucket }} </td>
+                        <td> {{ Art.First_name }} </td>
+                        <td> {{ Art.Last_name }} </td>
+                        <td> {{ Art.Address }} </td>
+                        <td> {{ Art.Tel }} </td>
+                        <td> {{ Art.Rental_period }} </td>
+                        <td> {{ Art.Amount }} </td>
+                        <td> {{ Art.Size_s }} </td>
+                        <td> {{ Art.Size_m }} </td>
+                        <td> {{ Art.Size_l }} </td>
+                        <td> {{ Art.Date }} </td>
+                        <td>
+                            <button class=" far-fa-edit" data-toggle="modal" data-target="#editModal" ng-click="selectUser(user)"><i class="far fa-edit"></i></button>
+                        </td>
+                        <td>
+                            <button class="deleteb" data-toggle="modal" data-target="#deleteModal" ng-click="selectUser(user)"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "Accou/index.html" %} {% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-5">
+    <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูล คลังสูญหาย</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i>Download</a>
+</div>
+<!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">ข้อมูลคลังถังน้ำแข็งสูญหาย</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                <thead>
+                    <tr>
+                        <th>รหัสถังน้ำแข็ง</th>
+                        <th>รหัสรายการ</th>
+                        <th>ชื่อรายการ</th>
+                        <th>รหัสเอเจนซี่</th>
+                        <th>ชื่อผู้เช่า</th>
+                        <th>จำนวนเงิน</th>
+                        <th>ขนาด</th>
+                        <th>ขนาด S</th>
+                        <th>ขนาด M</th>
+                        <th>ขนาด L</th>
+                        <th>วันที่</th>
+                        <th>หมายเหตุ</th>
+                        <th colspan="2">
+                            <div class=" align-items-center flex-row-reverse bd-highlight">
+                                <button class="p-2 bd-highlight btn btn-info pull-right new-btn" data-toggle="modal" data-target="#addModal">&#10011 Add Data</button>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>รหัสถังน้ำแข็ง</th>
+                        <th>รหัสรายการ</th>
+                        <th>ชื่อรายการ</th>
+                        <th>รหัสเอเจนซี่</th>
+                        <th>ชื่อผู้เช่า</th>
+                        <th>จำนวนเงิน</th>
+                        <th>ขนาด</th>
+                        <th>ขนาด S</th>
+                        <th>ขนาด M</th>
+                        <th>ขนาด L</th>
+                        <th>วันที่</th>
+                        <th>หมายเหตุ</th>
+                        <th colspan="2">
+                            <div class=" align-items-center flex-row-reverse bd-highlight">
+                                <button class="p-2 bd-highlight btn btn-info pull-right new-btn" data-toggle="modal" data-target="#addModal">&#10011 Add Data</button>
+                            </div>
+                        </th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    {% for wl in warehouse_lost %}
+                    <tr>
+                        <td> {{ wl.ID_bucket }} </td>
+                        <td> {{ wl.ID_List }} </td>
+                        <td> {{ wl.Name_List }} </td>
+                        <td> {{ wl.ID_Aj }} </td>
+                        <td> {{ wl.Tenant_name }} </td>
+                        <td> {{ wl.Amount }} </td>
+                        <td> {{ wl.Size_s }} </td>
+                        <td> {{ wl.Size_m }} </td>
+                        <td> {{ wl.Size_l }} </td>
+                        <td> {{ wl.Note }} </td>
+                        <td> {{ wl.Date }} </td>
+                        <td>
+                            <!-- <i class="far fa-edit"></i> -->
+                            <button class="far-fa-edit" data-toggle="modal" data-target="#editModal" ng-click="selectUser(user)"><i class="far fa-edit"></i></button>
+                        </td>
+                        <td>
+                            <button class="deleteb" data-toggle="modal" data-target="#deleteModal" ng-click="selectUser(user)"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
